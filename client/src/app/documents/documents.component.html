@@ -1,0 +1,37 @@
+<div align="center">
+
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.controls.censored.value, messageForm.controls.document.value)">
+
+    <label>
+      Censored Keywords and Phrases (" " or ' ') - separated by spaces or commas:
+      <input type="text" formControlName="censored">
+      <div *ngIf="submitted && messageForm.controls.censored.errors" class="error">
+        <div *ngIf="messageForm.controls.censored.errors.required">Censors are required</div>
+      </div>
+    </label>
+
+    <label>
+      Document Text:
+      <textarea type="text" formControlName="document"></textarea>
+      <div *ngIf="submitted && messageForm.controls.document.errors" class="error">
+        <div *ngIf="messageForm.controls.document.errors.required">Document text is required</div>
+      </div>
+    </label>
+
+    <input type="submit" value="Process Document" class="cta">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+  </form>
+
+  <div *ngIf="success" class="results">
+    <strong>Censored Items:</strong>
+    <span>{{ messageForm.controls.censored.value }}</span>
+
+    <strong>Document Text:</strong>
+    <textarea readonly type="text">
+      {{ messageForm.controls.document.value }}
+    </textarea>
+  </div>
+
+</div>
