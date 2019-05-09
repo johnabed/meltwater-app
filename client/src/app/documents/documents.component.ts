@@ -34,12 +34,13 @@ export class DocumentsComponent implements OnInit {
 
     // Create censor list to parse document text
     this.createCensors(censored);
+    console.log(this.censorList);
 
-    // Parse document text
     this.originalDocument = document;
     this.modifiedDocument = document;
     this.caseSensitive = caseSensitive;
 
+    // Parse document text
     for (let i = 0; i < this.censorList.length; i++) {
       // OPTIONAL: Creates censor mask to replace in document text ("Hello World" => "XXXXX XXXXX")
       // const replacementString = this.censorList[i].replace(/\S/g, 'X');

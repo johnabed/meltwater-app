@@ -1,5 +1,7 @@
-<div align="center">
-
+<div>
+  <h2>
+    Input
+  </h2>
   <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.controls.censored.value,
   messageForm.controls.document.value, messageForm.controls.caseSensitive.value)">
 
@@ -27,15 +29,14 @@
     <input type="submit" value="Process Document" class="cta">
 
     <h5 *ngIf="success">Your form is valid!</h5>
-
   </form>
+</div>
 
+<div>
   <div *ngIf="success" class="results">
-    <strong>Censored Items:</strong>
-    <span>{{ messageForm.controls.censored.value }}</span>
-
-    <strong>Case Sensitive?</strong>
-    <span>{{ caseSensitive }}</span>
+    <h2>
+      Results
+    </h2>
 
     <label>Original Document Text:
       <textarea readonly type="text">
@@ -49,5 +50,4 @@
     </textarea>
     </label>
   </div>
-
 </div>

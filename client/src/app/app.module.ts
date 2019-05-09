@@ -20,7 +20,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,
-  MatGridListModule} from '@angular/material';
+  MatGridListModule,
+  MatDividerModule} from '@angular/material';
 
 import { DocumentsComponent } from './documents/documents.component';
 
@@ -47,6 +48,7 @@ import { DocumentsComponent } from './documents/documents.component';
     MatFormFieldModule,
     NgSelectModule,
     MatGridListModule,
+    MatDividerModule,
     FormsModule
   ],
   providers: [],
