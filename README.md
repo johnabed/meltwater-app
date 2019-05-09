@@ -1,9 +1,12 @@
 # CIA Document Processing
 
-This web application was built by John Abed as part of the Meltwater software engineering assignment. The functionality of the app is:
+This web application was built by John Abed as part of the Meltwater software engineering assignment.
+
+## Functionality
 
   - Provide censor words and phrases (phrases in single/double quoted brackets) and words separated by spaces and commas
   - Input document text
+  - Choose whether case sensitivity applies (i.e. Apple is different from apple/APPLE/AppLe)
   - Press "Process Document"
   - Magic - the Original and Processed versions of your document are displayed
   
