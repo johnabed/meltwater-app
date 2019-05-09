@@ -1,6 +1,7 @@
 <div align="center">
 
-  <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.controls.censored.value, messageForm.controls.document.value)">
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.controls.censored.value,
+  messageForm.controls.document.value, messageForm.controls.caseSensitive.value)">
 
     <label>
       Censored Keywords and Phrases (" " or ' ') - separated by spaces or commas:
@@ -18,6 +19,11 @@
       </div>
     </label>
 
+    <label>
+      Case Sensitive?
+      <input type="checkbox" formControlName="caseSensitive">
+    </label>
+
     <input type="submit" value="Process Document" class="cta">
 
     <h5 *ngIf="success">Your form is valid!</h5>
@@ -28,10 +34,20 @@
     <strong>Censored Items:</strong>
     <span>{{ messageForm.controls.censored.value }}</span>
 
-    <strong>Document Text:</strong>
-    <textarea readonly type="text">
-      {{ messageForm.controls.document.value }}
+    <strong>Case Sensitive?</strong>
+    <span>{{ caseSensitive }}</span>
+
+    <label>Original Document Text:
+      <textarea readonly type="text">
+      {{ originalDocument }}
     </textarea>
+    </label>
+
+    <label>Modified Document Text:
+      <textarea readonly type="text">
+      {{ modifiedDocument }}
+    </textarea>
+    </label>
   </div>
 
 </div>
