@@ -1,6 +1,12 @@
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This web application was built by John Abed as part of the Meltwater software engineering assignment. The functionality of the app is:
+
+  - Provide censor words and phrases (phrases in single/double quoted brackets) and words separated by spaces and commas
+  - Input document text
+  - Press "Process Document"
+  - Magic - the Original and Processed versions of your document are displayed
 
 ## Development server
 
